@@ -13,7 +13,7 @@
 
   <!-- パンくず -->
   <?php get_template_part('parts/breadcrumb') ?>
-  
+
 
   <section class="lower-about lower-bg lower-bg--about lower-about-layout">
     <div class="lower-about__inner inner">
@@ -53,23 +53,23 @@
           </div>
           <div class="gallery__container">
             <ul class="gallery__items">
-              <li class="gallery__item js-modal">
-                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/gallery1.jpg" alt="ギャラリーの写真1" />
-              </li>
-              <li class="gallery__item js-modal">
-                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/gallery2.jpg" alt="ギャラリーの写真2" />
-              </li>
-              <li class="gallery__item js-modal">
-                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/gallery3.jpg" alt="ギャラリーの写真3" />
-              </li>
-              <li class="gallery__item js-modal">
-                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/gallery4.jpg" alt="ギャラリーの写真4" />
-              </li>
-              <li class="gallery__item js-modal">
-                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/gallery5.jpg" alt="ギャラリーの写真5" />
-              </li>
-              <li class="gallery__item js-modal">
-                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/gallery6.jpg" alt="ギャラリーの写真6" />
+              <?php
+              $imgGroup = SCF::get('gallery_list');
+              foreach ($imgGroup as $fields) {
+                $imgurl = wp_get_attachment_image_src($fields['gallery_item'], 'large');
+              ?>
+                <li class="gallery__item js-modal">
+                  <!-- 画像がない時はnoImg画像を表示 -->
+                  <?php if ($fields['gallery_item'] === "") { ?>
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/noImage.jpg">
+                    <!-- それ以外（画像がある時）画像を表示 -->
+                  <?php } else { ?>
+                    <img src="<?php echo $imgurl[0]; ?>">
+                  <?php
+                  }
+                  ?>
+                </li>
+              <?php } ?>
               </li>
             </ul>
           </div>
