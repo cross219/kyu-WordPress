@@ -16,7 +16,7 @@
 
   <section class="page-faq lower-bg page-faq-layout">
     <div class="page-faq__inner inner">
-      <ul class="page-faq__items">
+      <!-- <ul class="page-faq__items">
         <?php
         $faq_q_key = 'faq-q';
         $faq_a_key = 'faq-a';
@@ -38,8 +38,29 @@
           }
         }
         ?>
-
+      </ul> -->
+      <ul class="page-faq__items">
+        <?php
+        $faqData = SCF::get('faq');
+        if ($faqData) {
+          foreach ($faqData as $faqItem) {
+            $question = esc_html($faqItem['faq-q']);
+            $answer = esc_html($faqItem['faq-a']);
+        ?>
+            <li class="page-faq__item faq">
+              <div class="faq__summary js-faq">
+                <?php echo $question; ?><span class="faq__icon"></span>
+              </div>
+              <p class="faq__content">
+                <?php echo $answer; ?>
+              </p>
+            </li>
+        <?php
+          }
+        }
+        ?>
       </ul>
+
     </div>
   </section>
   <?php get_footer(); ?>
