@@ -57,25 +57,24 @@
             ?>
           </dl>
         </li>
-        <!-- <li class="page-price__list">
+        <li class="page-price__list">
           <h3 class="page-price__heading"><span>ファンダイビング</span></h3>
           <dl class="page-price__content">
-            <dt class="page-price__course">
-              ビーチダイビング <br class="u-mobile" />(2ダイブ)
-            </dt>
-            <dd class="page-price__price">¥14,000</dd>
-            <dt class="page-price__course">
-              ボートダイビング <br class="u-mobile" />(2ダイブ)
-            </dt>
-            <dd class="page-price__price">¥18,000</dd>
-            <dt class="page-price__course">
-              スペシャルダイビング <br class="u-mobile" />(2ダイブ)
-            </dt>
-            <dd class="page-price__price">¥24,000</dd>
-            <dt class="page-price__course">
-              ナイトダイビング <br class="u-mobile" />(1ダイブ)
-            </dt>
-            <dd class="page-price__price">¥10,000</dd>
+            <?php
+            $priceTable = SCF::get('price-table3');
+            if ($priceTable) {
+              foreach ($priceTable as $priceItem) {
+                $course = esc_html($priceItem['course3']);
+                $price = esc_html($priceItem['price3']);
+            ?>
+                <dt class="page-price__course">
+                  <?php echo $course; ?>
+                </dt>
+                <dd class="page-price__price"><?php echo $price; ?></dd>
+            <?php
+              }
+            }
+            ?>
           </dl>
         </li>
         <li class="page-price__list">
@@ -83,20 +82,23 @@
             <span>スペシャルダイビング</span>
           </h3>
           <dl class="page-price__content">
-            <dt class="page-price__course">
-              貸切ダイビング <br class="u-mobile" />(2ダイブ)
-            </dt>
-            <dd class="page-price__price">¥24,000</dd>
-            <dt class="page-price__course">
-              1日ダイビング <br class="u-mobile" />(3ダイブ)
-            </dt>
-            <dd class="page-price__price">¥32,000</dd>
-            <dt class="page-price__course">
-              ナイトダイビング <br class="u-mobile" />(2ダイブ)
-            </dt>
-            <dd class="page-price__price">¥14,000</dd>
+            <?php
+            $priceTable = SCF::get('price-table4');
+            if ($priceTable) {
+              foreach ($priceTable as $priceItem) {
+                $course = esc_html($priceItem['course4']);
+                $price = esc_html($priceItem['price4']);
+            ?>
+                <dt class="page-price__course">
+                  <?php echo $course; ?>
+                </dt>
+                <dd class="page-price__price"><?php echo $price; ?></dd>
+            <?php
+              }
+            }
+            ?>
           </dl>
-        </li> -->
+        </li>
       </ul>
     </div>
   </section>
