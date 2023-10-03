@@ -14,10 +14,8 @@
   @include mq(md) {
     display: flex;
     gap: rem(32);
-
   }
 }
-
 
 .tab__button {
   max-width: rem(162);
@@ -38,8 +36,6 @@
   background: $accent;
 }
 
-
-
 .tab__items {
   display: grid;
   grid-template-columns: 1fr;
@@ -54,13 +50,12 @@
 }
 
 .tab__wrapper {
-  display: none;
+  // display: none;
   margin-top: rem(42);
   @include mq(md) {
     margin-top: rem(38);
+  }
 }
-}
-
 
 // .tab__wrapper--campaign {
 //   margin-top: rem(37);
@@ -75,8 +70,6 @@
 //     margin-top: rem(38);
 //   }
 // }
-
-
 
 .tab__wrapper.current-cat {
   display: block;

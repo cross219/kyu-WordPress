@@ -17,22 +17,29 @@
       <div class="archive-voice__tab tab">
         <!-- タブ部分 -->
         <ul class="tab__buttons">
-          <li class="tab__button current-cat">
+          <li class="tab__button ">
             <a href="<?php echo esc_url(get_post_type_archive_link('voice')); ?>">ALL</a>
           </li>
           <?php
           $taxonomy_terms = get_terms('voice-category', array('hide_empty' => false));
+          $current_category_id = get_queried_object_id(); // 現在のカテゴリーのIDを取得
+
           foreach ($taxonomy_terms as $taxonomy_term) :
+            $term_id = $taxonomy_term->term_id;
+            $term_url = esc_url(get_term_link($term_id, 'voice-category'));
+            $current_class = ($term_id === $current_category_id) ? ' current-cat' : '';
           ?>
-            <li class="tab__button">
-              <a href="<?php echo esc_url(get_term_link($taxonomy_term, 'voice-category')); ?>">
+            <li class="tab__button<?php echo $current_class; ?>">
+              <a href="<?php echo $term_url; ?>">
                 <?php echo esc_html($taxonomy_term->name); ?>
               </a>
             </li>
           <?php endforeach; ?>
+
+
         </ul>
         <!-- コンテンツ -->
-        <div class="tab__wrapper">
+        <div class="tab__wrapper ">
           <ul class="voice-cards">
             <?php if (have_posts()) :
               while (have_posts()) :
@@ -78,12 +85,10 @@
             endif; ?>
           </ul>
         </div>
-      </div>
-      <!-- page-navi-->
-      <div class="archive-voice__pagenavi">
+
+        <div class="archive-voice__pagenavi">
         <?php wp_pagenavi(); ?>
+        </div>
       </div>
-      <!-- page-navi-->
-    </div>
   </section>
   <?php get_footer(); ?>
