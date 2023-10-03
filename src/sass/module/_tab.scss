@@ -33,7 +33,7 @@
 }
 
 .tab__button:hover,
-.tab__button.is-active {
+.tab__button.current-cat {
   color: $white;
   background: $accent;
 }
@@ -78,7 +78,7 @@
 
 
 
-.tab__wrapper.is-active {
+.tab__wrapper.current-cat {
   display: block;
   animation: appear 0.9s ease;
 }

@@ -16,12 +16,28 @@
     <div class="archive-voice__inner inner">
       <div class="archive-voice__tab tab">
         <!-- タブ部分 -->
-        <div class="tab__buttons">
+        <!-- <div class="tab__buttons">
           <button class="tab__button is-active js-tab">ALL</button>
           <button class="tab__button js-tab">ライセンス講習</button>
           <button class="tab__button js-tab">ファンダイビング</button>
           <button class="tab__button js-tab">体験ダイビング</button>
-        </div>
+        </div> -->
+        <!-- カテゴリー(ターム)を全部表示 -->
+        <ul class="archive-voice__tab">
+          <li class="tab__button current-cat">
+            <a href="<?php echo esc_url(get_post_type_archive_link('voice')); ?>">ALL</a>
+          </li>
+          <?php
+          $taxonomy_terms = get_terms('voice-category', array('hide_empty' => false));
+          foreach ($taxonomy_terms as $taxonomy_term) :
+          ?>
+            <li class="tab__button">
+              <a href="<?php echo esc_url(get_term_link($taxonomy_term, 'voice-category')); ?>">
+                <?php echo esc_html($taxonomy_term->name); ?>
+              </a>
+            </li>
+          <?php endforeach; ?>
+        </ul>
         <!-- 全てのコンテンツ -->
         <div class="tab__wrapper is-active js-content">
           <ul class="voice-cards js-list">
