@@ -23,7 +23,7 @@
           <button class="tab__button js-tab">体験ダイビング</button>
         </div> -->
         <!-- カテゴリー(ターム)を全部表示 -->
-        <ul class="archive-voice__tab">
+        <ul class="tab__buttons">
           <li class="tab__button current-cat">
             <a href="<?php echo esc_url(get_post_type_archive_link('voice')); ?>">ALL</a>
           </li>
