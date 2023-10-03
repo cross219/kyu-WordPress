@@ -3,8 +3,8 @@
   <!-- 下層ページのメインビュー -->
   <div class="sub-mv">
     <picture class="sub-mv__img">
-      <source srcset="<?php get_template_part('parts/') ?>/assets/images/common/campaign-sub-mv_sp.jpg" media="(max-width: 768px)" />
-      <img src="<?php get_template_part('parts/') ?>/assets/images/common/campaign-sub-mv_pc.jpg" alt="黄色い熱帯魚2匹の写真" />
+      <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/campaign-sub-mv_sp.jpg" media="(max-width: 768px)" />
+      <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/campaign-sub-mv_pc.jpg" alt="黄色い熱帯魚2匹の写真" />
     </picture>
     <div class="sub-mv__title-box">
       <h2 class="sub-mv__title">Campaign</h2>
