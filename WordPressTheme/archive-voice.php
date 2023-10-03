@@ -25,132 +25,49 @@
         <!-- 全てのコンテンツ -->
         <div class="tab__wrapper is-active js-content">
           <ul class="voice-cards js-list">
-            <li class="vice-cards__item voice-card">
-              <div class="voice-card__upper">
-                <div class="voice-card__title-box">
-                  <div class="voice-card__meta">
-                    <div class="voice-card__age">20代(女性)</div>
-                    <div class="voice-card__category">ライセンス講習</div>
+            <?php if (have_posts()) :
+              while (have_posts()) :
+                the_post(); ?>
+                <li class="vice-cards__item voice-card">
+                  <div class="voice-card__upper">
+                    <div class="voice-card__title-box">
+                      <div class="voice-card__meta">
+                        <div class="voice-card__age">
+                          <?php $text = get_field('age');
+                          if ($text) {
+                            echo $text;
+                          } ?>
+                        </div>
+                        <?php
+                        $taxonomy_terms = get_the_terms($post->ID, 'voice-category');
+                        if ($taxonomy_terms) : ?>
+                          <div class="voice-card__category">
+                            <?php echo $taxonomy_terms[0]->name; ?>
+                          </div>
+                        <?php endif; ?>
+                      </div>
+                      <h3 class="voice-card__title">
+                        <?php the_title(); ?>
+                      </h3>
+                    </div>
+                    <div class="voice-card__img animate-img js-colorbox">
+                      <?php if (get_the_post_thumbnail()) : ?>
+                        <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?>のアイキャッチ画像">
+                      <?php else : ?>
+                        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/no-image.jpg" alt="no-mage">
+                      <?php endif; ?>
+                    </div>
                   </div>
-                  <h3 class="voice-card__title">
-                    ここにタイトルが入ります。ここにタイトル
-                  </h3>
-                </div>
-                <div class="voice-card__img animate-img js-colorbox">
-                  <img src="./assets/images/common/voice-1.jpg" alt="女性の写真" />
-                </div>
-              </div>
-              <div class="voice-card__text">
-                ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br />
-                ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br />
-                ここにテキストが入ります。ここにテキストが入ります。
-              </div>
-            </li>
-            <!-- <li class="vice-cards__item voice-card">
-              <div class="voice-card__upper">
-                <div class="voice-card__title-box">
-                  <div class="voice-card__meta">
-                    <div class="voice-card__age">20代(男性)</div>
-                    <div class="voice-card__category">ファンダイビング</div>
+                  <div class="voice-card__text">
+                    <?php $text = get_field('content');
+                    if ($text) {
+                      echo $text;
+                    } ?>
                   </div>
-                  <h3 class="voice-card__title">
-                    ここにタイトルが入ります。ここにタイトル
-                  </h3>
-                </div>
-                <div class="voice-card__img animate-img js-colorbox">
-                  <img src="./assets/images/common/voice-2.jpg" alt="男性の写真" />
-                </div>
-              </div>
-              <div class="voice-card__text">
-                ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br />
-                ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br />
-                ここにテキストが入ります。ここにテキストが入ります。
-              </div>
-            </li>
-            <li class="vice-cards__item voice-card">
-              <div class="voice-card__upper">
-                <div class="voice-card__title-box">
-                  <div class="voice-card__meta">
-                    <div class="voice-card__age">30代(女性)</div>
-                    <div class="voice-card__category">体験ダイビング</div>
-                  </div>
-                  <h3 class="voice-card__title">
-                    ここにタイトルが入ります。ここにタイトル
-                  </h3>
-                </div>
-                <div class="voice-card__img animate-img js-colorbox">
-                  <img src="./assets/images/common/voice-3.jpg" alt="女性2人の写真" />
-                </div>
-              </div>
-              <div class="voice-card__text">
-                ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br />
-                ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br />
-                ここにテキストが入ります。ここにテキストが入ります。
-              </div>
-            </li>
-            <li class="vice-cards__item voice-card">
-              <div class="voice-card__upper">
-                <div class="voice-card__title-box">
-                  <div class="voice-card__meta">
-                    <div class="voice-card__age">30代(女性)</div>
-                    <div class="voice-card__category">体験ダイビング</div>
-                  </div>
-                  <h3 class="voice-card__title">
-                    ここにタイトルが入ります。ここにタイトル
-                  </h3>
-                </div>
-                <div class="voice-card__img animate-img js-colorbox">
-                  <img src="./assets/images/common/voice-4.jpg" alt="女性の写真" />
-                </div>
-              </div>
-              <div class="voice-card__text">
-                ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br />
-                ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br />
-                ここにテキストが入ります。ここにテキストが入ります。
-              </div>
-            </li>
-            <li class="vice-cards__item voice-card">
-              <div class="voice-card__upper">
-                <div class="voice-card__title-box">
-                  <div class="voice-card__meta">
-                    <div class="voice-card__age">30代(カップル)</div>
-                    <div class="voice-card__category">ファンダイビング</div>
-                  </div>
-                  <h3 class="voice-card__title">
-                    ここにタイトルが入ります。ここにタイトル
-                  </h3>
-                </div>
-                <div class="voice-card__img animate-img js-colorbox">
-                  <img src="./assets/images/common/voice-5.jpg" alt="カップルの写真" />
-                </div>
-              </div>
-              <div class="voice-card__text">
-                ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br />
-                ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br />
-                ここにテキストが入ります。ここにテキストが入ります。
-              </div>
-            </li>
-            <li class="vice-cards__item voice-card">
-              <div class="voice-card__upper">
-                <div class="voice-card__title-box">
-                  <div class="voice-card__meta">
-                    <div class="voice-card__age">20代(女性)</div>
-                    <div class="voice-card__category">ライセンス講習</div>
-                  </div>
-                  <h3 class="voice-card__title">
-                    ここにタイトルが入ります。ここにタイトル
-                  </h3>
-                </div>
-                <div class="voice-card__img animate-img js-colorbox">
-                  <img src="./assets/images/common/voice-6.jpg" alt="女の人の写真" />
-                </div>
-              </div>
-              <div class="voice-card__text">
-                ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br />
-                ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br />
-                ここにテキストが入ります。ここにテキストが入ります。
-              </div>
-            </li> -->
+                </li>
+            <?php endwhile;
+            endif; ?>
+
           </ul>
         </div>
         <!--  ライセンス講習のコンテンツ -->

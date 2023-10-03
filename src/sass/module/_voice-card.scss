@@ -66,6 +66,9 @@
 .voice-card__img {
   aspect-ratio: 151 / 117;
   overflow: hidden;
+  @include mq(md) {
+    aspect-ratio: 180 / 140;
+  }
 }
 
 .voice-card__img img {

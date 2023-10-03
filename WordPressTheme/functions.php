@@ -51,7 +51,7 @@ add_filter('excerpt_length', 'custom_excerpt_length', 999);
  * @param int $position メニューの位置
  */
 
- SCF::add_options_page(
+SCF::add_options_page(
 	'実績サイト',
 	'実績情報',
 	'manage_options',
@@ -59,3 +59,5 @@ add_filter('excerpt_length', 'custom_excerpt_length', 999);
 	'dashicons-admin-generic',
 	11
 );
+
+
