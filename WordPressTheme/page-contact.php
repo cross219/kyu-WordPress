@@ -13,7 +13,7 @@
 
   <!-- パンくず -->
   <?php get_template_part('parts/breadcrumb') ?>
-  
+
 
   <section class="page-contact lower-bg page-contact-layout">
     <div class="page-contact__inner inner">
@@ -23,7 +23,8 @@
         </p>
       </div>
       <div class="page-contact__content form">
-        <form action="page-thanks.html" method="post" id="form">
+        <?php echo do_shortcode('[contact-form-7 id="d11baca" title="お問い合わせ"]'); ?>
+        <!-- <form action="page-thanks.html" method="post" id="form">
           <dl class="form__item">
             <dt>お名前 <span>必須</span></dt>
             <dd>
@@ -80,7 +81,7 @@
               <div class="button__arrow"></div>
             </div>
           </div>
-        </form>
+        </form> -->
       </div>
     </div>
   </section>

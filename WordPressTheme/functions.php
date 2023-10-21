@@ -61,3 +61,30 @@ SCF::add_options_page(
 );
 
 
+//コンタクトフォーム キャンペーン ドロップダウンリスト
+function custom_get_select_values($values, $options, $args)
+{
+	if (in_array('GetOccupation', $options)) {
+		// データを取得する
+		$args = array(
+			'post_type' => 'campaign',
+			'posts_per_page' => -1,
+		);
+		$custom_posts = get_posts($args);
+		if ($custom_posts) {
+			$values = array();
+			foreach ($custom_posts as $post) {
+				$values[] = $post->post_title;
+			}
+		}
+	}
+	return $values;
+}
+add_filter('wpcf7_form_tag_data_option', 'custom_get_select_values', 10, 3);
+
+// Contact Form 7で自動挿入されるPタグ、brタグを削除
+add_filter('wpcf7_autop_or_not', 'wpcf7_autop_return_false');
+function wpcf7_autop_return_false()
+{
+	return false;
+}
