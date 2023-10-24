@@ -32,28 +32,15 @@
   margin-top: rem(40);
 }
 
-.page-privacypolicy__block:not(:first-child) {
-  margin-top: rem(33);
+.page-privacypolicy__content p {
+  margin-top: rem(40);
 }
 
-
-.page-privacypolicy__lead {
+.page-privacypolicy__content ol{
+list-style: decimal;
+margin-left: rem(16);
 }
 
-.page-privacypolicy__list {
-  list-style-type: decimal;
-  list-style-position: outside;
-  padding-left: rem(23);
-  margin-top: rem(30);
-}
-
-.page-privacypolicy__list--mt0 {
-  margin-top: 0;
-}
-
-.page-privacypolicy__number {
-}
-
-.page-privacypolicy__text {
-  margin-top: rem(30);
+.page-privacypolicy__content ol:first-of-type {
+  margin-top: rem(40);
 }

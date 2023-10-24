@@ -34,23 +34,36 @@
 }
 
 
-.page-terms__lead {
+// .page-terms__lead {
+// }
+
+// .page-terms__list {
+//   list-style-type: decimal;
+//   list-style-position: outside;
+//   padding-left: rem(23);
+//   margin-top: rem(30);
+// }
+
+// .page-terms__list--mt0 {
+//   margin-top: 0;
+// }
+
+// .page-terms__number {
+// }
+
+// .page-terms__text {
+//   margin-top: rem(34);
+// }
+
+.page-terms__content p {
+  margin-top: rem(40);
 }
 
-.page-terms__list {
-  list-style-type: decimal;
-  list-style-position: outside;
-  padding-left: rem(23);
-  margin-top: rem(30);
+.page-terms__content ol{
+list-style: decimal;
+margin-left: rem(16);
 }
 
-.page-terms__list--mt0 {
-  margin-top: 0;
-}
-
-.page-terms__number {
-}
-
-.page-terms__text {
-  margin-top: rem(34);
+.page-terms__content ol{
+  margin-top: rem(40);
 }

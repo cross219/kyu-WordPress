@@ -348,7 +348,7 @@ a {
 	width: 10px;
 }
 
-.aside__archive__container {
+.aside__archive--container {
 	margin-top: 1.25rem;
 }
 
@@ -1181,6 +1181,14 @@ textarea {
 	display: none !important;
 }
 
+.wpcf7-not-valid-tip {
+	display: none !important;
+}
+
+.wpcf7-form.sent .wpcf7-response-output {
+	display: none !important;
+}
+
 .form {
 	letter-spacing: 0.05em;
 }
@@ -1916,23 +1924,17 @@ textarea {
 	margin-top: 2.5rem;
 }
 
-.page-privacypolicy__block:not(:first-child) {
-	margin-top: 2.0625rem;
+.page-privacypolicy__content p {
+	margin-top: 2.5rem;
 }
 
-.page-privacypolicy__list {
-	list-style-position: outside;
-	list-style-type: decimal;
-	margin-top: 1.875rem;
-	padding-left: 1.4375rem;
+.page-privacypolicy__content ol {
+	list-style: decimal;
+	margin-left: 1rem;
 }
 
-.page-privacypolicy__list--mt0 {
-	margin-top: 0;
-}
-
-.page-privacypolicy__text {
-	margin-top: 1.875rem;
+.page-privacypolicy__content ol:first-of-type {
+	margin-top: 2.5rem;
 }
 
 .page-sitemap__container {
@@ -1999,19 +2001,17 @@ textarea {
 	margin-top: 2.5rem;
 }
 
-.page-terms__list {
-	list-style-position: outside;
-	list-style-type: decimal;
-	margin-top: 1.875rem;
-	padding-left: 1.4375rem;
+.page-terms__content p {
+	margin-top: 2.5rem;
 }
 
-.page-terms__list--mt0 {
-	margin-top: 0;
+.page-terms__content ol {
+	list-style: decimal;
+	margin-left: 1rem;
 }
 
-.page-terms__text {
-	margin-top: 2.125rem;
+.page-terms__content ol {
+	margin-top: 2.5rem;
 }
 
 .page-thanks__body {
@@ -2600,7 +2600,7 @@ textarea {
 	margin-top: 0.375rem;
 }
 
-.toggle-list__summary {
+.toggle-list__year {
 	color: #408f95;
 	cursor: pointer;
 	display: block;
@@ -2611,23 +2611,23 @@ textarea {
 	position: relative;
 }
 
-.toggle-list__summary::before {
+.toggle-list__year::before {
 	background: url(../images/common/toggle.png) no-repeat center center/contain;
 	content: "";
 	height: 1.5rem;
 	left: 0.125rem;
 	margin-right: 20px;
 	position: absolute;
-	top: 47%;
+	top: 0.9375rem;
 	transform: translateY(-50%);
 	width: 1.5rem;
 }
 
-.toggle-list[open] .toggle-list__summary::before {
+.toggle-list__year.open::before {
 	transform: translateY(-40%) rotate(90deg);
 }
 
-.toggle-list__content {
+.toggle-list__month {
 	color: #408f95;
 	display: block;
 	font-size: 1.5rem;
@@ -2638,7 +2638,7 @@ textarea {
 	position: relative;
 }
 
-.toggle-list__content::before {
+.toggle-list__month::before {
 	background: url(../images/common/toggle.png) no-repeat center center/contain;
 	content: "";
 	height: 1.5rem;
@@ -2651,6 +2651,10 @@ textarea {
 }
 
 summary::-webkit-details-marker {
+	display: none;
+}
+
+.month-archive-list {
 	display: none;
 }
 

@@ -88,3 +88,39 @@ function wpcf7_autop_return_false()
 {
 	return false;
 }
+
+function is_parent_slug() {
+	global $post;
+	if ($post->post_parent) {
+			$post_data = get_post($post->post_parent);
+			return $post_data->post_name;
+	}
+}
+
+function getPostViews($postID) {
+  $count_key = 'post_views_count';
+  $count = get_post_meta($postID, $count_key, true);
+  if ($count == '') {
+    delete_post_meta($postID, $count_key);
+    add_post_meta($postID, $count_key, '0');
+    return '0 PV';
+    // return '0 View';
+  }
+  return $count.' PV';
+  // return $count.'Views';
+}
+
+function setPostViews($postID) {
+  $count_key = 'post_views_count';
+  $count = get_post_meta($postID, $count_key, true);
+  if ($count == '') {
+    $count = 0;
+    delete_post_meta($postID, $count_key);
+    add_post_meta($postID, $count_key, '0');
+  } else {
+    $count++;
+    update_post_meta($postID, $count_key, $count);
+  }
+}
+
+remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);

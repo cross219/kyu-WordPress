@@ -170,6 +170,18 @@ jQuery(function ($) {
       clickedAccordion.addClass("close");
     }
   });
+  $(".js-toggle").on("click", function () {
+    // クリックされたアコーディオン要素を取得
+    var clickedAccordion = $(this);
+    // クリックされたアコーディオンを開閉する
+    var findElm = clickedAccordion.next(".toggle__content");
+    findElm.slideToggle();
+    if (clickedAccordion.hasClass("open")) {
+      clickedAccordion.removeClass("open");
+    } else {
+      clickedAccordion.addClass("open");
+    }
+  });
   //form
   $(document).ready(function () {
     // 必須項目の入力要素を取得
