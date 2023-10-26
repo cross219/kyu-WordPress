@@ -21,12 +21,12 @@
             <a href="<?php echo esc_url(get_post_type_archive_link('voice')); ?>">ALL</a>
           </li>
           <?php
-          $taxonomy_terms = get_terms('voice-category', array('hide_empty' => false));
+          $taxonomy_terms = get_terms('voice_category', array('hide_empty' => false));
           $current_category_id = get_queried_object_id(); // 現在のカテゴリーのIDを取得
 
           foreach ($taxonomy_terms as $taxonomy_term) :
             $term_id = $taxonomy_term->term_id;
-            $term_url = esc_url(get_term_link($term_id, 'voice-category'));
+            $term_url = esc_url(get_term_link($term_id, 'voice_category'));
             $current_class = ($term_id === $current_category_id) ? ' current-cat' : '';
           ?>
             <li class="tab__button<?php echo $current_class; ?>">
@@ -55,7 +55,7 @@
                           } ?>
                         </div>
                         <?php
-                        $taxonomy_terms = get_the_terms($post->ID, 'voice-category');
+                        $taxonomy_terms = get_the_terms($post->ID, 'voice_category');
                         if ($taxonomy_terms) : ?>
                           <div class="voice-card__category">
                             <?php echo $taxonomy_terms[0]->name; ?>
@@ -87,7 +87,7 @@
         </div>
 
         <div class="archive-voice__pagenavi">
-        <?php wp_pagenavi(); ?>
+          <?php wp_pagenavi(); ?>
         </div>
       </div>
   </section>

@@ -16,7 +16,7 @@
           お探しのページが見つかりません。
         </p>
         <div class="not-found__button">
-          <a href="<?php echo esc_url( home_url( 'top' ) ); ?>" class="button button--accent">Page TOP<span class="button__arrow button__arrow--accent"></span></a>
+          <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="button button--accent">Page TOP<span class="button__arrow button__arrow--accent"></span></a>
         </div>
       </div>
     </div>

@@ -1,4 +1,9 @@
 <?php get_header(); ?>
+
+<?php
+$contact = esc_url( home_url( '/contact/' ) );
+?>
+
 <main>
   <!-- 下層ページのメインビュー -->
   <div class="sub-mv">
@@ -21,11 +26,11 @@
             <a href="<?php echo esc_url(get_post_type_archive_link('campaign')); ?>">ALL</a>
           </li>
           <?php
-          $taxonomy_terms = get_terms('campaign-category', array('hide_empty' => false));
+          $taxonomy_terms = get_terms('campaign_category', array('hide_empty' => false));
           foreach ($taxonomy_terms as $taxonomy_term) :
           ?>
             <li class="tab__button">
-              <a href="<?php echo esc_url(get_term_link($taxonomy_term, 'campaign-category')); ?>">
+              <a href="<?php echo esc_url(get_term_link($taxonomy_term, 'campaign_category')); ?>">
                 <?php echo esc_html($taxonomy_term->name); ?>
               </a>
             </li>
@@ -48,7 +53,7 @@
                     </div>
                     <div class="price-card__container">
                       <?php
-                      $taxonomy_terms = get_the_terms($post->ID, 'campaign-category');
+                      $taxonomy_terms = get_the_terms($post->ID, 'campaign_category');
                       if ($taxonomy_terms) : ?>
                         <div class="price-card__category"><?php echo $taxonomy_terms[0]->name; ?></div>
                       <?php endif; ?>
@@ -87,7 +92,7 @@
                           ご予約・お問い合わせはコチラ
                         </p>
                         <div class="price-card__button">
-                          <a href="page-contact.html" class="button">Contact us
+                          <a href="<?php echo $contact; ?>" class="button">Contact us
                             <div class="button__arrow"></div>
                           </a>
                         </div>

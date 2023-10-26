@@ -1,4 +1,23 @@
 <?php
+$home = esc_url(home_url('/'));
+$campaign = esc_url(home_url('/campaign'));
+$license = esc_url(home_url('/campaign_category/license/'));
+$experience = esc_url(home_url('/campaign_category/experience/'));
+$diving = esc_url(home_url('/campaign_category/diving/'));
+$about = esc_url(home_url('/about/'));
+$information = esc_url(home_url('/information/'));
+$blog = esc_url(home_url('/blog/'));
+$voice = esc_url(home_url('/voice/'));
+$price = esc_url(home_url('/price/'));
+$faq = esc_url(home_url('/faq/'));
+$contact = esc_url(home_url('/contact/'));
+$policy = esc_url(home_url('/privacy-policy/'));
+$terms = esc_url(home_url('/terms-of-service/'));
+$sitemap = esc_url(home_url('/site-map/'));
+?>
+
+
+<?php
 // 404ページを判定
 if (is_404()) {
   // 404ページの場合、コードを表示しない
@@ -12,7 +31,7 @@ if (is_404()) {
       <div class="contact__wrapper">
         <div class="contact__info-box">
           <div class="contact__logo logo">
-            <a href="index.html" class="logo__link">
+            <a href="<?php echo $home; ?>" class="logo__link">
               <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/logo-green.png" alt="CodeUpsのロゴ" />
             </a>
           </div>
@@ -39,7 +58,7 @@ if (is_404()) {
           </div>
           <p class="contact__text">ご予約・お問い合わせはコチラ</p>
           <div class="contact__button">
-            <a href="page-contact.html" class="button">Contact us
+            <a href="<?php echo $contact; ?>" class="button">Contact us
               <div class="button__arrow"></div>
             </a>
           </div>
@@ -65,7 +84,7 @@ if (is_404()) {
   <div class="footer__inner inner">
     <div class="footer__logos">
       <div class="footer__logo logo">
-        <a href="index.html" class="logo__link">
+        <a href="<?php echo $home; ?>" class="logo__link">
           <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/logo.png" alt="CodeUpsのロゴ" />
         </a>
       </div>
@@ -78,72 +97,73 @@ if (is_404()) {
       <div class="site-nav__items">
         <ul>
           <li class="site-nav__item site-nav__item--section">
-            <a href="archive-campaign.html">キャンペーン</a>
+            <a href="<?php echo $campaign; ?>">キャンペーン</a>
           </li>
           <li class="site-nav__item">
-            <a href="archive-campaign.html">ライセンス取得</a>
+            <a href="" <?php echo $license; ?>">ライセンス取得</a>
           </li>
           <li class="site-nav__item">
-            <a href="archive-campaign.html">貸切体験ダイビング</a>
+            <a href="<?php echo $diving; ?>">ファンダイビング</a>
           </li>
           <li class="site-nav__item">
-            <a href="archive-campaign.html">ナイトダイビング</a>
+            <a href="<?php echo $experience; ?>">体験ダイビング</a>
           </li>
           <li class="site-nav__item site-nav__item--section">
-            <a href="page-about-us.html">私たちについて</a>
+            <a href="<?php echo $about; ?>">私たちについて</a>
           </li>
         </ul>
         <ul>
           <li class="site-nav__item site-nav__item--section">
-            <a href="page-information.html">ダイビング情報</a>
+            <a href="<?php echo $information; ?>">ダイビング情報</a>
           </li>
           <li class="site-nav__item">
-            <a href="page-information.html?tabId=tab1">ライセンス講習</a>
+            <a href="<?php echo $information; ?>?tabId=tab1">ライセンス講習</a>
           </li>
           <li class="site-nav__item">
-            <a href="page-information.html?tabId=tab3">体験ダイビング</a>
+            <a href="<?php echo $information; ?>?tabId=tab3">体験ダイビング</a>
           </li>
           <li class="site-nav__item">
-            <a href="page-information.html?tabId=tab2">ファンダイビング</a>
+            <a href="<?php echo $information; ?>?tabId=tab2">ファンダイビング</a>
           </li>
           <li class="site-nav__item site-nav__item--section">
-            <a href="home.html">ブログ</a>
+            <a href="<?php echo $blog; ?>">ブログ</a>
           </li>
         </ul>
       </div>
       <div class="site-nav__items">
         <ul>
           <li class="site-nav__item site-nav__item--section">
-            <a href="archive-voice.html">お客様の声</a>
+            <a href="<?php echo $voice; ?>">お客様の声</a>
           </li>
           <li class="site-nav__item site-nav__item--section">
-            <a href="page-price.html">料金一覧</a>
+            <a href="<?php echo $price; ?>">料金一覧</a>
           </li>
           <li class="site-nav__item">
-            <a href="page-price.html">ライセンス講習</a>
+            <a href="<?php echo $price; ?>">ライセンス講習</a>
           </li>
           <li class="site-nav__item">
-            <a href="page-price.html">体験ダイビング</a>
+            <a href="<?php echo $price; ?>">体験ダイビング</a>
           </li>
           <li class="site-nav__item">
-            <a href="page-price.html">ファンダイビング</a>
+            <a href="<?php echo $price; ?>">ファンダイビング</a>
           </li>
         </ul>
         <ul>
           <li class="site-nav__item site-nav__item--section">
-            <a href="page-faq.html">よくある質問</a>
+            <a href="<?php echo $faq; ?>">よくある質問</a>
           </li>
           <li class="site-nav__item site-nav__item--section">
-            <a href="page-privacypolicy.html">プライバシー<br class="u-mobile" />ポリシー</a>
+            <a href="<?php echo $policy; ?>">プライバシー<br class="u-mobile" />
+              ポリシー</a>
           </li>
           <li class="site-nav__item site-nav__item--section">
-            <a href="page-terms-of-service.html">利用規約</a>
+            <a href="<?php echo $terms; ?>">利用規約</a>
           </li>
           <li class="site-nav__item site-nav__item--section">
-            <a href="page-contact.html">お問い合わせ</a>
+            <a href="<?php echo $sitemap; ?>">サイトマップ</a>
           </li>
           <li class="site-nav__item site-nav__item--section">
-            <a href="page-sitemap.html">サイトマップ</a>
+            <a href="<?php echo $contact; ?>">お問い合わせ</a>
           </li>
         </ul>
       </div>

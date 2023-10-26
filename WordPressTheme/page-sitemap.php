@@ -1,5 +1,23 @@
 <?php get_header(); ?>
 
+<?php
+$home = esc_url(home_url('/'));
+$campaign = esc_url(home_url('/campaign'));
+$license = esc_url(home_url('/campaign_category/license/'));
+$experience = esc_url(home_url('/campaign_category/experience/'));
+$diving = esc_url(home_url('/campaign_category/diving/'));
+$about = esc_url(home_url('/about/'));
+$information = esc_url(home_url('/information/'));
+$blog = esc_url(home_url('/blog/'));
+$voice = esc_url(home_url('/voice/'));
+$price = esc_url(home_url('/price/'));
+$faq = esc_url(home_url('/faq/'));
+$contact = esc_url(home_url('/contact/'));
+$policy = esc_url(home_url('/privacy-policy/'));
+$terms = esc_url(home_url('/terms-of-service/'));
+$sitemap = esc_url(home_url('/site-map/'));
+?>
+
 <main>
   <!-- 下層ページのメインビュー -->
   <div class="sub-mv">
@@ -21,70 +39,70 @@
       <nav class="page-sitemap__container">
         <ul class="page-sitemap__items">
           <li class="page-sitemap__item page-sitemap__item--section">
-            <a href="archive-campaign.html">キャンペーン</a>
+            <a href="<?php echo $campaign; ?>">キャンペーン</a>
           </li>
           <li class="page-sitemap__item">
-            <a href="archive-campaign.html">ライセンス取得</a>
+            <a href=""<?php echo $license; ?>">ライセンス取得</a>
           </li>
           <li class="page-sitemap__item">
-            <a href="archive-campaign.html">貸切体験ダイビング</a>
+            <a href="<?php echo $diving; ?>">ファンダイビング</a>
           </li>
           <li class="page-sitemap__item">
-            <a href="archive-campaign.html">ナイトダイビング</a>
+            <a href="<?php echo $experience; ?>">体験ダイビング</a>
           </li>
           <li class="page-sitemap__item page-sitemap__item--section page-sitemap__item--margin-sp page-sitemap__item--margin-pc">
-            <a href="page-about-us.html">私たちについて</a>
+            <a href="<?php echo $about; ?>">私たちについて</a>
           </li>
         </ul>
 
         <ul class="page-sitemap__items">
           <li class="page-sitemap__item page-sitemap__item--section page-sitemap__item--margin-sp">
-            <a href="page-information.html">ダイビング情報</a>
+            <a href="<?php echo $information; ?>">ダイビング情報</a>
           </li>
           <li class="page-sitemap__item">
-            <a href="page-information.html">ライセンス講習</a>
+            <a href="<?php echo $information; ?>">ライセンス講習</a>
           </li>
           <li class="page-sitemap__item">
-            <a href="page-information.html">体験ダイビング</a>
+            <a href="<?php echo $information; ?>">体験ダイビング</a>
           </li>
           <li class="page-sitemap__item">
-            <a href="page-information.html">ファンダイビング</a>
+            <a href="<?php echo $information; ?>">ファンダイビング</a>
           </li>
           <li class="page-sitemap__item page-sitemap__item--section page-sitemap__item--margin-sp page-sitemap__item--margin-pc">
-            <a href="home.html">ブログ</a>
+            <a href="<?php echo $blog; ?>">ブログ</a>
           </li>
         </ul>
 
         <ul class="page-sitemap__items page-sitemap__items--right">
           <li class="page-sitemap__item page-sitemap__item--section">
-            <a href="archive-voice.html">お客様の声</a>
+            <a href="<?php echo $voice; ?>">お客様の声</a>
           </li>
           <li class="page-sitemap__item page-sitemap__item--section page-sitemap__item--margin-sp page-sitemap__item--margin-pc">
-            <a href="page-price.html">料金一覧</a>
+            <a href="<?php echo $price; ?>">料金一覧</a>
           </li>
           <li class="page-sitemap__item">
-            <a href="page-price.html">ライセンス講習</a>
+            <a href="<?php echo $price; ?>">ライセンス講習</a>
           </li>
           <li class="page-sitemap__item">
-            <a href="page-price.html">体験ダイビング</a>
+            <a href="<?php echo $price; ?>">体験ダイビング</a>
           </li>
           <li class="page-sitemap__item">
-            <a href="page-price.html">ファンダイビング</a>
+            <a href="<?php echo $price; ?>">ファンダイビング</a>
           </li>
         </ul>
         <ul class="page-sitemap__items page-sitemap__items--right">
           <li class="page-sitemap__item page-sitemap__item--section page-sitemap__item--margin--sp">
-            <a href="page-faq.html">よくある質問</a>
+            <a href="<?php echo $faq; ?>">よくある質問</a>
           </li>
           <li class="page-sitemap__item page-sitemap__item--section page-sitemap__item--margin--sp page-sitemap__item--margin-pc">
-            <a href="page-privacypolicy.html">プライバシー<br class="u-mobile" />
+            <a href="<?php echo $policy; ?>">プライバシー<br class="u-mobile" />
               ポリシー</a>
           </li>
           <li class="page-sitemap__item page-sitemap__item--section page-sitemap__item--margin--sp page-sitemap__item--margin-pc">
-            <a href="page-terms-of-service.html">利用規約</a>
+            <a href="<?php echo $terms; ?>">利用規約</a>
           </li>
           <li class="page-sitemap__item page-sitemap__item--section page-sitemap__item--margin--sp page-sitemap__item--margin-pc">
-            <a href="page-contact.html">お問い合わせ</a>
+            <a href="<?php echo $contact; ?>">お問い合わせ</a>
           </li>
         </ul>
       </nav>

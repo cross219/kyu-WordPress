@@ -14,10 +14,6 @@
   <!-- パンくず -->
   <?php get_template_part('parts/breadcrumb') ?>
 
-
-
-
-
   <section class="lower-blog lower-bg single-layout">
     <div class="lower-blog__inner inner">
       <div class="lower-blog__contents">

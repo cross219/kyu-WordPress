@@ -9,8 +9,7 @@
   margin-top: rem(6);
 }
 
-
-.toggle-list__year {
+.toggle__year {
   list-style: none;
   cursor: pointer;
   padding-left: rem(32);
@@ -21,7 +20,7 @@
   position: relative;
 }
 
-.toggle-list__year::before {
+.toggle__year::before {
   position: absolute;
   // top: 47%;
   top: rem(15);
@@ -34,12 +33,11 @@
   margin-right: 20px;
 }
 
-.toggle-list__year.open::before {
+.toggle__year.open::before {
   transform: translateY(-40%) rotate(90deg);
 }
 
-
-.toggle-list__month {
+.toggle__month {
   display: block;
   padding-left: rem(32);
   margin-left: rem(24);
@@ -50,7 +48,7 @@
   position: relative;
 }
 
-.toggle-list__month::before {
+.toggle__month::before {
   position: absolute;
   top: 50%;
   left: rem(2);
@@ -62,10 +60,14 @@
   margin-right: 20px;
 }
 
-summary::-webkit-details-marker {
+.toggle__items {
   display: none;
 }
 
-.month-archive-list {
-  display: none;
-}
+// summary::-webkit-details-marker {
+//   display: none;
+// }
+
+// .month-archive-list {
+//   display: none;
+// }

@@ -21,11 +21,11 @@
             <a href="<?php echo esc_url(get_post_type_archive_link('voice')); ?>">ALL</a>
           </li>
           <?php
-          $taxonomy_terms = get_terms('voice-category', array('hide_empty' => false));
+          $taxonomy_terms = get_terms('voice_category', array('hide_empty' => false));
           foreach ($taxonomy_terms as $taxonomy_term) :
           ?>
             <li class="tab__button">
-              <a href="<?php echo esc_url(get_term_link($taxonomy_term, 'voice-category')); ?>">
+              <a href="<?php echo esc_url(get_term_link($taxonomy_term, 'voice_category')); ?>">
                 <?php echo esc_html($taxonomy_term->name); ?>
               </a>
             </li>
@@ -48,7 +48,7 @@
                           } ?>
                         </div>
                         <?php
-                        $taxonomy_terms = get_the_terms($post->ID, 'voice-category');
+                        $taxonomy_terms = get_the_terms($post->ID, 'voice_category');
                         if ($taxonomy_terms) : ?>
                           <div class="voice-card__category">
                             <?php echo $taxonomy_terms[0]->name; ?>
