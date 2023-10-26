@@ -56,7 +56,7 @@
               <?php
               $imgGroup = SCF::get('gallery_list');
               foreach ($imgGroup as $fields) {
-                $imgurl = wp_get_attachment_image_src($fields['gallery_item'], 'large');
+                $imgurl = wp_get_attachment_image_src($fields['gallery_item'], 'full');
               ?>
                 <li class="gallery__item js-modal">
                   <!-- 画像がない時はnoImg画像を表示 -->
@@ -64,7 +64,8 @@
                     <img src="<?php echo get_template_directory_uri(); ?>/img/noImage.jpg">
                     <!-- それ以外（画像がある時）画像を表示 -->
                   <?php } else { ?>
-                    <img src="<?php echo $imgurl[0]; ?>">
+                    <img src="<?php echo $imgurl[0]; ?>" alt="ギャラリーの
+                    写真">
                   <?php
                   }
                   ?>
